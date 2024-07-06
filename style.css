@@ -27,7 +27,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--text-color);
 }
 
 img {
@@ -166,3 +165,35 @@ header {
   justify-content: space-between;
   gap:1rem ;
 }
+
+
+.ser-box{
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 35px 20px;
+    border-radius: 2rem;
+}
+
+.ser-box img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+}
+
+.ser-box p{
+    color: var(--container-color);
+
+}
+
+.heading p{
+    max-width: 550px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-family: var(--poppins-font);
+    margin-top: 1rem;
+}
+
