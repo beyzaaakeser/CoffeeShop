@@ -25,6 +25,15 @@ body {
   background: var(--bg-color);
 }
 
+html::-webkit-scrollbar{
+  width: 0.5rem;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: var(--main-color);
+}
+
 a {
   text-decoration: none;
 }
