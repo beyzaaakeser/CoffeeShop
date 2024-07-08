@@ -94,6 +94,35 @@ header {
   font-size: 20px;
 }
 
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5px;
+  cursor: pointer;
+  z-index: 200;
+  transform: 0.3s;
+}
+
+.menu-icon div {
+  display: block;
+  background: var(--bg-color);
+  height: 2px;
+  width: 23px;
+  transition: 0.3s;
+}
+
+.move .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+.move .line2 {
+  opacity: 0;
+}
+.move .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
 .home {
   min-height: 650px;
   display: grid;
@@ -440,72 +469,222 @@ header {
   border-radius: 2.5rem;
 }
 
-
-.book-btn:hover{
+.book-btn:hover {
   background: var(--second-color);
-  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1) ;
+  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-
-.book-data p{
+.book-data p {
   font-size: 0.8rem;
   font-weight: 500;
   text-align: center;
 }
 
-.footer{
+.footer {
   display: grid;
-  grid-template-columns: repeat(4,auto);
+  grid-template-columns: repeat(4, auto);
   justify-content: space-between;
   gap: 1rem;
   margin-top: 3rem !important;
-
 }
 
-.footer .logo{
+.footer .logo {
   color: var(--main-color);
-
 }
 
-.social{
+.social {
   display: flex;
   align-items: center;
   margin-top: 1rem;
 }
 
-.social a{
+.social a {
   font-size: 24px;
   color: var(--main-color);
   margin-right: 1rem;
-
 }
 
-.social a:hover{
+.social a:hover {
   color: var(--second-color);
 }
 
-.footer-box{
+.footer-box {
   display: flex;
   flex-direction: column;
 }
 
-.footer-box h3{
+.footer-box h3 {
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 1rem;
-
+  color: var(--main-color);
+  text-decoration: underline var(--text-alter-color);
 }
 
-.footer-box a{
+.footer-box a {
   color: var(--main-color);
   margin-bottom: 10px;
-
 }
 
-
-.copyright{
+.copyright {
   padding: 30px;
   color: var(--main-color);
   text-align: center;
 }
 
+/**************************************************************/
+
+@media (max-width: 1080px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home-text h1 {
+    font-size: 3rem;
+  }
+
+  .product-content {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px;
+  }
+}
+
+@media (max-width: 875px) {
+  section {
+    padding: 2rem 0;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .home {
+    min-height: 500px;
+    grid-template-columns: 1fr;
+    margin-top: 4.5rem !important;
+  }
+  .home-text {
+    order: 1;
+  }
+
+  .heading h2,
+  .book-data h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .book {
+    padding: 20px;
+  }
+
+  .book-data {
+    margin-top: 3rem;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .book-data form {
+    display: grid;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .input-box {
+    border-bottom: 1px solid var(--text-alter-color);
+  }
+
+  .footer {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    top: 15px;
+  }
+
+  .nav {
+    padding: 14px 20px;
+  }
+
+  .logo {
+    font-style: 1.25rem;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90vw;
+    background: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .open-menu {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .nav-link {
+    display: block;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading h2 br {
+    display: contents;
+  }
+
+  .service-content {
+    justify-content: center;
+  }
+
+  .product-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .footer {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 380px) {
+  .home-text h1 {
+    font-size: 2rem;
+  }
+  .service-content {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 140px));
+  }
+
+  .ser-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+  .heading h2,
+  .book-data h2 {
+    font-size: 1.4rem;
+  }
+}
